@@ -2,6 +2,21 @@ import "./App.css";
 import ParkingLotForm from "./Components/ParkingLotForm/ParkingLotForm";
 import ParkingLotList from "./Components/ParkingLotList/ParkingLotList";
 
+let initialData = [
+  {
+    date: "2023-06-27",
+    priority: "Low",
+    link: "https://google.com/",
+    description: "Ultimate source of truth.",
+  },
+  {
+    date: "2023-08-29",
+    priority: "Medium",
+    link: "https://react.dev/",
+    description: "React documentation and tutorial.",
+  },
+];
+
 function App() {
   return (
     <div className="App">
