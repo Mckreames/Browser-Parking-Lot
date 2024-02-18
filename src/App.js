@@ -32,7 +32,7 @@ function App() {
       </header>
       <main>
         <ParkingLotForm />
-        <ParkingLotList items={parkingLotItems} />
+        <ParkingLotList parkingLotItems={parkingLotItems} />
       </main>
     </div>
   );
