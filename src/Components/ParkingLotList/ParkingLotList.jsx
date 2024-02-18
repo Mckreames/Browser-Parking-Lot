@@ -1,7 +1,15 @@
 import React from 'react';
+import ParkingLotItem from './ParkingLotItem';
 
-export default function ParkingLotList() {
+import './ParkingLotList.css';
+
+export default function ParkingLotList({ parkingLotItems }) {
+
+  const ListItems = parkingLotItems.map(item => 
+    <ParkingLotItem key={item.id} { ...item } />
+  );
+
   return (
-    <div>ParkingLotList</div>
+      <section className="Parking-lot-list-container"> { ListItems } </section>
   );
 }

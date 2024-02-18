@@ -1,42 +1,29 @@
+import "./App.css";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 import ParkingLotForm from "./Components/ParkingLotForm/ParkingLotForm";
 import ParkingLotList from "./Components/ParkingLotList/ParkingLotList";
 
-let initialData = [
-  {
-    date: "2023-06-27",
-    priority: "Low",
-    link: "https://google.com/",
-    description: "Ultimate source of truth.",
-  },
-  {
-    date: "2023-08-29",
-    priority: "Medium",
-    link: "https://react.dev/",
-    description: "React documentation and tutorial.",
-  },
-];
+import "./App.css";
 
 function App() {
-  let [parkingLotItems, setParkingLotItems] = useState([
+  const [parkingLotItems, setParkingLotItems] = useState([
     {
+      id: nanoid(),
       date: "2023-06-27",
-
       priority: "Low",
       link: "https://google.com/",
-
       description: "Ultimate source of truth.",
     },
-
     {
+      id: nanoid(),
       date: "2023-08-29",
-
       priority: "Medium",
       link: "https://react.dev/",
-
       description: "React documentation and tutorial",
     },
   ]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -45,7 +32,7 @@ function App() {
       </header>
       <main>
         <ParkingLotForm />
-        <ParkingLotList />
+        <ParkingLotList items={parkingLotItems} />
       </main>
     </div>
   );
