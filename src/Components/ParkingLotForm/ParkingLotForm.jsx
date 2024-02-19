@@ -10,8 +10,8 @@ const PRIORITIES = {
 
 export default function ParkingLotForm({ addItem }) {
 
-  const [date, setDate] = useState('02/22/2024');
-  const [link, setLink] = useState('http://portfolio-9ld.pages.dev');
+  const [date, setDate] = useState('');
+  const [link, setLink] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState(PRIORITIES.Medium);
 
