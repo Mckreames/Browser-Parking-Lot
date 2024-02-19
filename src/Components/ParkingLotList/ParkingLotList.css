@@ -6,6 +6,7 @@
     
 .parking-lot-item-container {
     max-width: 30%;
+    width: 18rem;
     background-color:#222222;
     box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.8);
     padding: 1rem;
@@ -13,9 +14,9 @@
 }
     
 .parking-lot-item-anchor {
-    color: gold;
+    color: rgb(251, 236, 152);
 }
     
 .parking-lot-item-anchor:visited {
-    color: goldenrod;
+    color: rgb(125, 224, 152);
 }
