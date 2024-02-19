@@ -1,0 +1,23 @@
+[33mae9f18c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m Merge branch 'timer'
+[33ma9f1254[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m local storage changes
+[33m3657279[m[33m ([m[1;32mtimer[m[33m)[m timer
+[33m2aa4144[m Cleanup of hard coded values
+[33mcde69ea[m delete feature
+[33m447a22d[m form radio button styling
+[33ma06f186[m reactstrap card component
+[33m3c0acf9[m add item
+[33mb90428e[m Parking lot list and items
+[33m2729df9[m getting the hang of things
+[33mbe1a50a[m Merge branch 'main' of https://github.com/Mckreames/Browser-Parking-Lot
+[33mdf156c6[m hard code usestate
+[33m2e5f290[m following the video
+[33me29b6e6[m saved two different apps in the same folder by mistake
+[33m4e7f197[m added semi-colon. Nothing seems to be working right now
+[33m4600893[m Parking lot form and list
+[33m4f0d6fe[m added rfc components
+[33m37ac4a4[m Create react app cleanup
+[33m8d44f38[m added git gh-pages thingy
+[33mc68a176[m removed a layer of files
+[33m71ed6c4[m remove report web vitals
+[33m3a77344[m fixing broken npm or somthing idk
+[33m34f1be3[m setup for react app
