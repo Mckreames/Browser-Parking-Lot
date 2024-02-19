@@ -1,28 +1,25 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import ParkingLotForm from "./Components/ParkingLotForm/ParkingLotForm";
 import ParkingLotList from "./Components/ParkingLotList/ParkingLotList";
 
-import "./App.css";
+function getInitialState() {
+  let savedState = localStorage.getItem("items");
+  if (typeof savedState === "string") {
+    return JSON.parse(savedState);
+  }
+  return [];
+}
 
 function App() {
-  const [parkingLotItems, setParkingLotItems] = useState([
-    {
-      id: nanoid(),
-      date: "06/27/2024",
-      priority: "Low",
-      link: "https://google.com/",
-      description: "Ultimate source of truth.",
-    },
-    {
-      id: nanoid(),
-      date: "08/29/2024",
-      priority: "Medium",
-      link: "https://react.dev/",
-      description: "React documentation and tutorial",
-    },
-  ]);
+  const [parkingLotItems, setParkingLotItems] = useState(getInitialState());
+
+  function saveParkingLotItems() {
+    localStorage.setItem("items", JSON.stringify(parkingLotItems));
+  }
+
+  useEffect(saveParkingLotItems, [parkingLotItems]);
 
   function addItem(date, link, description, priority) {
     setParkingLotItems((oldItems) => [
@@ -38,7 +35,9 @@ function App() {
   }
 
   function deleteItem(id) {
-    setParkingLotItems((oldItems) => oldItems.filter((item) => item.id !== id));
+    setParkingLotItems(
+      (oldItems) => (oldItems = oldItems.filter((item) => item.id !== id))
+    );
   }
 
   return (
