@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Mckreames/Browser-Parking-Lot/static/css/main.9297b99f.css",
-    "main.js": "/Mckreames/Browser-Parking-Lot/static/js/main.3f580d7f.js",
+    "main.css": "/Mckreames/Browser-Parking-Lot/static/css/main.f8630971.css",
+    "main.js": "/Mckreames/Browser-Parking-Lot/static/js/main.47f0ff09.js",
     "index.html": "/Mckreames/Browser-Parking-Lot/index.html",
-    "main.9297b99f.css.map": "/Mckreames/Browser-Parking-Lot/static/css/main.9297b99f.css.map",
-    "main.3f580d7f.js.map": "/Mckreames/Browser-Parking-Lot/static/js/main.3f580d7f.js.map"
+    "main.f8630971.css.map": "/Mckreames/Browser-Parking-Lot/static/css/main.f8630971.css.map",
+    "main.47f0ff09.js.map": "/Mckreames/Browser-Parking-Lot/static/js/main.47f0ff09.js.map"
   },
   "entrypoints": [
-    "static/css/main.9297b99f.css",
-    "static/js/main.3f580d7f.js"
+    "static/css/main.f8630971.css",
+    "static/js/main.47f0ff09.js"
   ]
 }
