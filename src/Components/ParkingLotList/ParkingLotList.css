@@ -5,12 +5,11 @@
 }
     
 .parking-lot-item-container {
-    max-width: 30%;
     width: 18rem;
-    background-color:#222222;
-    box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.8);
-    padding: 1rem;
+    box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.5);
     text-align: left;
+    padding: 1rem;
+    background-color:#222222;
 }
     
 .parking-lot-item-anchor {
