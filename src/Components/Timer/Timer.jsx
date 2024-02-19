@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 
 function getTime() {
     return new Date().toLocaleTimeString();
@@ -9,20 +9,27 @@ function Timer2() {
     const [time, setTime] = useState(getTime());
     const [intervalId, setIntervalId] = useState(null);
 
-    useEffect(() => {
-        // ComponentDidMount
+    function didMount() {
         let intervalId = setInterval(() => {
             setTime(getTime());
-            return () => {
-                clearInterval(intervalId);
-            }
         }, 100);
         setIntervalId(intervalId);
-    }, [])
+    }
+
+    function willUnmount() {
+        clearInterval(intervalId);
+    }
+
+    function administrateTimer () {
+        didMount();
+        return willUnmount
+    }
+
+    useEffect(administrateTimer, []);
 
     // ComponentWillUnmount
     return (
-        <div>{ time }</div>
+        <p>{ time }</p>
     )
 }
 
