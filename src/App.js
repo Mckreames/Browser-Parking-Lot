@@ -10,19 +10,32 @@ function App() {
   const [parkingLotItems, setParkingLotItems] = useState([
     {
       id: nanoid(),
-      date: "2023-06-27",
+      date: "06/27/2024",
       priority: "Low",
       link: "https://google.com/",
       description: "Ultimate source of truth.",
     },
     {
       id: nanoid(),
-      date: "2023-08-29",
+      date: "08/29/2024",
       priority: "Medium",
       link: "https://react.dev/",
       description: "React documentation and tutorial",
     },
   ]);
+
+  function addItem(date, link, description, priority) {
+    setParkingLotItems((oldItems) => [
+      ...oldItems,
+      {
+        id: nanoid(),
+        date,
+        link,
+        description,
+        priority,
+      },
+    ]);
+  }
 
   return (
     <div className="App">
@@ -31,7 +44,7 @@ function App() {
         <p>Send most of your browser tabs into retirement</p>
       </header>
       <main>
-        <ParkingLotForm />
+        <ParkingLotForm addItem={addItem} />
         <ParkingLotList parkingLotItems={parkingLotItems} />
       </main>
     </div>

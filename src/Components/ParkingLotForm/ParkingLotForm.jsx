@@ -1,7 +1,93 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Form, Button, FormGroup, Label, Input} from 'reactstrap';
+import './ParkingLotForm.css'
 
-export default function ParkingLotForm() {
+const PRIORITIES = {
+  High: 'High',
+  Medium: 'Medium',
+  Low: 'Low',
+}
+
+export default function ParkingLotForm({ addItem }) {
+
+  const [date, setDate] = useState('02/22/2024');
+  const [link, setLink] = useState('http://portfolio-9ld.pages.dev');
+  const [description, setDescription] = useState('');
+  const [priority, setPriority] = useState(PRIORITIES.Medium);
+
+  function handleDateChange(e) {
+    setDate(e.target.value);
+  }
+
+  function handleLinkChange(e) {
+    setLink(e.target.value);
+  }
+
+  function handleDescriptionChange(e) {
+    setDescription(e.target.value);
+  }
+
+  function handlePriorityChange(e) {
+    setPriority(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    let [y, M, d] = date.split('-');
+    let formattedDate = `${M}/${d}/${y}`;
+    addItem(formattedDate, link, description, priority);
+    setDate('');
+    setLink('');
+    setDescription('');
+    setPriority(PRIORITIES.Medium);
+  }
+
   return (
-    <div>ParkingLotForm</div>
+    <Form data-bs-theme="dark" className='parking-lot-form' onSubmit={handleSubmit}>
+      <FormGroup className="parking-lot-row">
+        <Label htmlFor="link-date">Date</Label>
+        <Input id="link-date" name="date" type="date" value={date} onChange={handleDateChange} required />
+      </FormGroup>
+      <FormGroup className="parking-lot-row">
+        <Label htmlFor="link-url">link</Label>
+        <Input id="link-url" name="url" type="url" value={link} onChange={handleLinkChange} required />
+      </FormGroup>
+      <FormGroup className="parking-lot-row">
+        <Label htmlFor="link-description">Description</Label>
+        <Input id="link-description" type="text" name="description" value={description} onChange={handleDescriptionChange} required />
+      </FormGroup>
+      <FormGroup className="parking-lot-row">
+        <Input 
+        name="radio-priority" 
+        type="radio" 
+        value={PRIORITIES.High}  
+        checked={priority === PRIORITIES.High}
+        onChange={handlePriorityChange}
+        id="prio-high" />
+        {' '}
+        <Label htmlFor="prio-high" className="me-3">High</Label>
+
+        <Input 
+        name="radio-priority" 
+        type="radio" 
+        value={PRIORITIES.Medium}  
+        checked={priority === PRIORITIES.Medium}
+        onChange={handlePriorityChange}
+        id="prio-medium" />
+        {' '}
+        <Label htmlFor="prio-medium" className="me-3">Medium</Label>
+
+        <Input 
+        name="radio-priority" 
+        type="radio" 
+        value={PRIORITIES.Low} 
+        checked={priority === PRIORITIES.Low}
+        onChange={handlePriorityChange}
+        id="prio-low" />
+        {' '}
+        <Label htmlFor="prio-low" className="me-3">Low</Label>
+      </FormGroup>
+      <Button type="submit">Submit</Button>
+    </Form>
   )
 }
