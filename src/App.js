@@ -1,9 +1,9 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import ParkingLotForm from "./Components/ParkingLotForm/ParkingLotForm";
 import ParkingLotList from "./Components/ParkingLotList/ParkingLotList";
 import Timer from "./Components/Timer/Timer";
+import "./App.css";
 
 function getInitialState() {
   let savedState = localStorage.getItem("items");
